@@ -1,0 +1,110 @@
+:root {
+    --background-light: #f0f0f5;
+    --background-dark: #121212;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --primary-color: #4a86e8; /* Blue */
+    --secondary-color: #6a5acd; /* Purple */
+    --button-bg-light: #4a86e8;
+    --button-bg-dark: #0056b3;
+    --slider-bg: #ddd;
+    --slider-active-bg: #4a86e8;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.5em; /* Reduced padding */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px; /* Adjusted margin */
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    padding: 20px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.slider {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider-label {
+    width: 50px;
+    height: 24px;
+    background: var(--slider-bg);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    transition: background-color 0.5s;
+}
+
+.slider-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s;
+}
+
+.slider input:checked + .slider-label {
+    background: var(--slider-active-bg);
+}
+
+.slider input:checked + .slider-label .slider-icon {
+    transform: translateX(25px);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+body.dark-mode header {
+    background-color: var(--background-dark);
+}
+
+body.dark-mode nav ul li a {
+    color: var(--text-light);
+}
